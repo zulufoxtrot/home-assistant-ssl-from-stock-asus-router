@@ -36,7 +36,7 @@ jobs:
             --test \
             --all \
             --target . \
-            --image "ricardoveloso/refresher-ssl-cert-from-stock-asus-ddns-router-{arch}" \
+            --image "ricardoaveloso/refresher-ssl-cert-from-stock-asus-ddns-router-{arch}" \
             --version ${{ steps.addonVersion.outputs.data }} \
             --addon
 
@@ -44,19 +44,19 @@ jobs:
         run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
       
       - name: Deploy armhf Release Builds
-        run: docker push ghcr.io/ricardoveloso/refresher-ssl-cert-from-stock-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
+        run: docker push ghcr.io/ricardoaveloso/refresher-ssl-cert-from-stock-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
 
       - name: Deploy armv7 Release Builds
-        run: docker push ghcr.io/ricardoveloso/refresher-ssl-cert-from-stock-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
+        run: docker push ghcr.io/ricardoaveloso/refresher-ssl-cert-from-stock-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
 
       - name: Deploy aarch64 Release Builds
-        run: docker push ghcr.io/ricardoveloso/refresher-ssl-cert-from-stock-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
+        run: docker push ghcr.io/ricardoaveloso/refresher-ssl-cert-from-stock-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
 
       - name: Deploy amd64 Release Builds
-        run: docker push ghcr.io/ricardoveloso/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
+        run: docker push ghcr.io/ricardoaveloso/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
 
       - name: Deploy i386 Release Builds
-        run: docker push ghcr.io/ricardoveloso/refresher-ssl-cert-from-stock-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
+        run: docker push ghcr.io/ricardoaveloso/refresher-ssl-cert-from-stock-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
             
             
             
