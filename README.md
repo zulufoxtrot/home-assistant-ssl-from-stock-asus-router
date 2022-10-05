@@ -13,9 +13,9 @@ This add-on helps transfer the SSL sertificate that Asus Stock Routers creates a
 | certFilePathOnRouter | String | The cert file path on the router | Required
 
 ## Attribution
-This is a fork of the following project:
-* <a href="https://github.com/s92025592025/home-assistant-ssl-from-asus-router" title="original project">home-assistant-ssl-from-asus-router by s92025592025
-(Flying_Apple_Pie)</a>
+This is a simple fork of the following project by s92025592025/Flying_Apple_Pie (you're welcome to buy him coffee, he's the main contributor):
+* <a href="https://github.com/s92025592025/home-assistant-ssl-from-asus-router" title="original project">home-assistant-ssl-from-asus-router</a>
+All I did was change it to use SSH instead of SCP (which is not present in Asus's stock firmware) and accept an SSH port number.
 
 icon.png is made thanks to the following:
 * <a href="https://www.flaticon.com/free-icons/pickup-truck" title="pickup-truck icons">Pickup-truck icons created by Freepik - Flaticon</a>
