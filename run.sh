@@ -24,8 +24,6 @@ echo "Touching ${SSH_DIR}/known_hosts..."
 touch ${SSH_DIR}/known_hosts
 
 echo "Setting ${SSH_DIR}/known_hosts Permission..."
-
-
 ls -lrt ${SSH_DIR}
 
 echo "Saving know hosts..."
