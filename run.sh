@@ -11,7 +11,7 @@ CERT_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.certFilePathOnRouter')"
 
 whoami
 echo "Getting Router Public RSA Key...."
-ROUTER_RSA_KEY=$(ssh-keyscan -t rsa ${ROUTER_IP})
+ROUTER_RSA_KEY=$(ssh-keyscan -v -t rsa ${ROUTER_IP})
 
 echo "Creating ${SSH_DIR}"
 mkdir -p ${SSH_DIR}
