@@ -7,7 +7,7 @@ This add-on helps transfer the SSL sertificate that Asus Stock Routers creates a
 | --- | --- | --- | --- 
 | routerUser | String | The user name to SSH with router | Required
 | routerIp | String | The IP Address to the router | Required
-| routerSshPort | String | The port for SSH into the router | Required
+| routerSshPort | Int | The port for SSH into the router | Required
 | rsaPrivateKeyPath | String | The path relative to `config` folder that points to the RSA private key need to establish the SSH connection | Required
 | keyFilePathOnRouter | String | The key file path on the router | Required
 | certFilePathOnRouter | String | The cert file path on the router | Required
