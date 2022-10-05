@@ -40,12 +40,6 @@ fi
 chmod 644 ${SSH_DIR}/known_hosts;
 cat ${SSH_DIR}/known_hosts
 
-#echo "scping..."
-#scp -P $(bashio::config 'sslFromAsusRouter.routerSshPort') -v ${ROUTER_USER}@${ROUTER_IP}:${KEY_PATH_ON_ROUTER} /ssl/
-#scp -P $(bashio::config 'sslFromAsusRouter.routerSshPort') -v ${ROUTER_USER}@${ROUTER_IP}:${CERT_PATH_ON_ROUTER} /ssl/
-
 echo "sshing..."
-#ssh ${ROUTER_USER}@${ROUTER_IP} -p $(bashio::config 'sslFromAsusRouter.routerSshPort') -i ${RSA_PRIVATE_KEY_PATH} "cat ${KEY_PATH_ON_ROUTER}" > /ssl/key.pem
-#ssh ${ROUTER_USER}@${ROUTER_IP} -p $(bashio::config 'sslFromAsusRouter.routerSshPort') -i ${RSA_PRIVATE_KEY_PATH} "cat ${CERT_PATH_ON_ROUTER}" > /ssl/cert.pem
 ssh ${ROUTER_USER}@${ROUTER_IP} -p ${ROUTER_PORT} "cat ${KEY_PATH_ON_ROUTER}" > /ssl/key.pem
 ssh ${ROUTER_USER}@${ROUTER_IP} -p ${ROUTER_PORT} "cat ${CERT_PATH_ON_ROUTER}" > /ssl/cert.pem
