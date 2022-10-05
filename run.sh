@@ -10,7 +10,6 @@ RSA_PRIVATE_KEY_PATH="$(bashio::config 'sslFromAsusRouter.rsaPrivateKeyPath')"
 KEY_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.keyFilePathOnRouter')"
 CERT_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.certFilePathOnRouter')"
 
-whoami
 echo "Getting Router Public RSA Key...."
 ROUTER_RSA_KEY=$(ssh-keyscan -v -p ${ROUTER_PORT} -t rsa ${ROUTER_IP})
 
@@ -18,8 +17,7 @@ echo "Creating ${SSH_DIR}"
 mkdir -p ${SSH_DIR}
 
 echo "Setting id_rsa file..."
-ls /
-cp ${RSA_PRIVATE_KEY_PATH} ${SSH_DIR}/id_rsa
+cp /config/${RSA_PRIVATE_KEY_PATH} ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
 echo "Touching ${SSH_DIR}/known_hosts..."
