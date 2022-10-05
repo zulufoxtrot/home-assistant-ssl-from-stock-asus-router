@@ -9,7 +9,6 @@ RSA_PRIVATE_KEY_PATH="$(bashio::config 'sslFromAsusRouter.rsaPrivateKeyPath')"
 KEY_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.keyFilePathOnRouter')"
 CERT_PATH_ON_ROUTER="$(bashio::config 'sslFromAsusRouter.certFilePathOnRouter')"
 
-echo "$USER"
 whoami
 echo "Getting Router Public RSA Key...."
 ROUTER_RSA_KEY=$(ssh-keyscan -t rsa ${ROUTER_IP})
