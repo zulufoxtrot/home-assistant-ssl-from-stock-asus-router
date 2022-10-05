@@ -18,6 +18,7 @@ echo "Creating ${SSH_DIR}"
 mkdir -p ${SSH_DIR}
 
 echo "Setting id_rsa file..."
+ls /home/keys/
 cp ${RSA_PRIVATE_KEY_PATH} ${SSH_DIR}/id_rsa
 chmod 600 ${SSH_DIR}/id_rsa
 
