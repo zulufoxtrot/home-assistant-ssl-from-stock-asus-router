@@ -37,14 +37,11 @@ jobs:
             --all \
             --target . \
             --image "zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64" \
-            --version 0.1.0 \
+            --version ${{ steps.addonVersion.outputs.data }} \
             --addon
-
       - name: Deploy amd64 Release Builds
-        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:0.1.0
-
-            
-            
-            
+        run: |
+          docker tag zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64 ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
+          docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
             
             
