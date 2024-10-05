@@ -36,26 +36,13 @@ jobs:
             --test \
             --all \
             --target . \
-            --image "zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-{arch}" \
-            --version ${{ steps.addonVersion.outputs.data }} \
+            --image "zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64" \
+            --version 0.1.0 \
             --addon
 
-      - name: Deploy armhf Release Builds
-        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
-
-      - name: Deploy armv7 Release Builds
-        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-armv7:${{ steps.addonVersion.outputs.data }}
-
-      - name: Deploy aarch64 Release Builds
-        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-aarch64:${{ steps.addonVersion.outputs.data }}
-
       - name: Deploy amd64 Release Builds
-        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
+        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:0.1.0
 
-      - name: Deploy i386 Release Builds
-        run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-i386:${{ steps.addonVersion.outputs.data }}
-            
-            
             
             
             
