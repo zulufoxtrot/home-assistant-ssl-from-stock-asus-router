@@ -15,9 +15,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          ref: ${{ env.GITHUB_REF }}
+          ref: ${{ github.ref }}
 
       - name: Get Add-on Release
         uses: KJ002/read-yaml@v1.4
@@ -27,7 +27,7 @@ jobs:
           key-path: '["version"]'
 
       - name: Display read-yaml output
-        run: echo "${{ steps.yaml-data.outputs.data }}"
+        run: echo "${{ steps.addonVersion.outputs.data }}"
 
       - name: Run Release Build
         uses: home-assistant/builder@2024.08.2
@@ -40,9 +40,6 @@ jobs:
             --version ${{ steps.addonVersion.outputs.data }} \
             --addon
 
-      - name: Login GitHub Container Registry on Docker
-        run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
-      
       - name: Deploy armhf Release Builds
         run: docker push ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-armhf:${{ steps.addonVersion.outputs.data }}
 
