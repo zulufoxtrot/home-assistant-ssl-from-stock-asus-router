@@ -20,7 +20,7 @@ jobs:
           ref: ${{ env.GITHUB_REF }}
 
       - name: Get Add-on Release
-        uses: KJ002/read-yaml@v1.5
+        uses: KJ002/read-yaml@latest
         id: addonVersion
         with:
           file: './config.yaml'
