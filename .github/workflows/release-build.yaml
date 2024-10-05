@@ -33,12 +33,8 @@ jobs:
         uses: home-assistant/builder@2024.08.2
         with:
           args: |
-            --test \
-            --all \
+            --amd64 \
             --target . \
-            --image "zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64" \
-            --version ${{ steps.addonVersion.outputs.data }} \
-            --addon
       - name: Deploy amd64 Release Builds
         run: |
           docker tag zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64 ghcr.io/zulufoxtrot/refresher-ssl-cert-from-stock-asus-ddns-router-amd64:${{ steps.addonVersion.outputs.data }}
